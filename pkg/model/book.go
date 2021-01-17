@@ -4,8 +4,8 @@ import "gorm.io/gorm"
 
 type Book struct {
 	gorm.Model
-	Title       string
-	Description string
-	ISBN        string
-	Author      string
+	Title       string `json:"title"`
+	Description string `json:"description"`
+	ISBN        string `json:"isbn"`
+	Author      string `json:"author"`
 }
