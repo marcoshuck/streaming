@@ -23,8 +23,8 @@ func (b *book) Find(isbn *string) ([]model.Book, error) {
 		q = q.Where("isbn = ?", *isbn)
 	}
 
-	if q.Find(&books).Error != nil {
-		return nil, q.Error
+	if err := q.Find(&books).Error; err != nil {
+		return nil, err
 	}
 
 	return books, nil
