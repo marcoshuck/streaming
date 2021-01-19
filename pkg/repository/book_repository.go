@@ -20,7 +20,7 @@ func (b *book) Find(isbn *string) ([]model.Book, error) {
 	q := b.db.Model(&model.Book{})
 
 	if isbn != nil {
-		q.Where("isbn = ?", *isbn)
+		q = q.Where("isbn = ?", *isbn)
 	}
 
 	if q.Find(&books).Error != nil {
