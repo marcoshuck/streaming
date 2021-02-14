@@ -9,7 +9,7 @@ import (
 
 type Book interface {
 	GetAll(w http.ResponseWriter, r *http.Request)
-	GetByISBN(writer http.ResponseWriter, request *http.Request)
+	GetByISBN(w http.ResponseWriter, r *http.Request)
 }
 
 type book struct {
